@@ -1,55 +1,61 @@
 package com.ws101.dizoncolele.EcommerceApi.service;
 
 import com.ws101.dizoncolele.EcommerceApi.model.Product;
+import com.ws101.dizoncolele.EcommerceApi.repository.ProductRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * Service Layer using JPA Repository
+ * Replaces ArrayList logic
+ */
 @Service
 public class ProductService {
 
-    private final List<Product> productList = new ArrayList<>();
-    private Long nextId = 1L;
+    private final ProductRepository repo;
+
+    public ProductService(ProductRepository repo) {
+        this.repo = repo;
+    }
+
+    // GET ALL
+    public List<Product> getAllProducts() {
+        return repo.findAll();
+    }
+
+    // GET BY ID
+    public Product getProduct(Long id) {
+        return repo.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Product not found"));
+    }
 
     // CREATE
-    public Product addProduct(Product product) {
-        product.setId(nextId++);
-        productList.add(product);
-        return product;
-    }
-
-    // READ ALL
-    public List<Product> getAllProducts() {
-        return productList;
-    }
-
-    // READ BY ID
-    public Optional<Product> getProductById(Long id) {
-        return productList.stream()
-                .filter(p -> p.getId().equals(id))
-                .findFirst();
+    public Product create(Product product) {
+        return repo.save(product);
     }
 
     // UPDATE
-    public Optional<Product> updateProduct(Long id, Product updatedProduct) {
-        Optional<Product> existing = getProductById(id);
-
-        if (existing.isPresent()) {
-            Product p = existing.get();
-            p.setName(updatedProduct.getName());
-            p.setDescription(updatedProduct.getDescription());
-            p.setPrice(updatedProduct.getPrice());
-            p.setQuantity(updatedProduct.getQuantity());
-            return Optional.of(p);
-        }
-
-        return Optional.empty();
+    public Product update(Long id, Product updated) {
+        Product existing = getProduct(id);
+        existing.setName(updated.getName());
+        existing.setPrice(updated.getPrice());
+        return repo.save(existing);
     }
 
     // DELETE
-    public boolean deleteProduct(Long id) {
-        return productList.removeIf(p -> p.getId().equals(id));
+    public void delete(Long id) {
+        repo.deleteById(id);
+    }
+
+    // FILTER BY CATEGORY
+    public List<Product> getByCategory(String name) {
+        return repo.findByCategoryName(name);
+    }
+
+    // FILTER BY PRICE RANGE
+    public List<Product> getByPriceRange(double min, double max) {
+        return repo.findProductsByPriceRange(min, max);
     }
 }
