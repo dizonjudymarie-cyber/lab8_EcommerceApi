@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart - Judella Store</title>
+    <link rel="stylesheet" href="/frontend/css/index.css">
+</head>
+<body>
+
+    <div class="sidenav">
+        <div class="logo">
+            <img src="/frontend/assets/images/logo/logo.png" alt="Logo">
+            <h2>Judella Store</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/frontend/index.html">Home</a></li>
+                <li><a href="/frontend/pages/product.html">Shop</a></li>
+                <li><a href="/frontend/pages/cart.html" class="active">Cart</a></li>
+                <li><a href="/frontend/pages/account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h1 style="text-align:center; margin-bottom: 20px;">Your Shopping Cart</h1>
+
+        <ul class="cart-items">
+            <section id="empty-cart-msg" class="empty-cart" style="display: none;">
+                <h2>Your cart is currently empty</h2>
+                <p>Discover our products and start shopping!</p>
+                <a href="/frontend/pages/product.html" class="btn">Shop Now</a>
+            </section>
+
+            <li data-price="599">
+                <img src="/frontend/assets/images/logo/dress.jpg" alt="Dress">
+                <div>
+                    <h3>Elegant Summer Dress</h3>
+                    <p class="price">₱599.00</p>
+                </div>
+                <input type="number" class="qty-input" value="1" min="1">
+            </li>
+            <li data-price="1299">
+                <img src="/frontend/assets/images/logo/runnings.jpg" alt="Shoes">
+                <div>
+                    <h3>Running Shoes</h3>
+                    <p class="price">₱1,299.00</p>
+                </div>
+                <input type="number" class="qty-input" value="1" min="1">
+            </li>
+        </ul>
+
+        <div class="subtotal">
+            Subtotal: <strong>₱1,898.00</strong>
+        </div>
+
+        <div style="text-align: right; margin-top: 20px;">
+            <a href="/frontend/pages/checkout.html" class="btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script src="/frontend/js/index.js"></script>
+</body>
+</html>

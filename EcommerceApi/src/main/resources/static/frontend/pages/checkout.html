@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Judella Store</title>
+    <link rel="stylesheet" href="/frontend/css/index.css">
+</head>
+<body>
+
+    <div class="sidenav">
+        <div class="logo">
+            <img src="/frontend/assets/images/logo/logo.png" alt="Logo">
+            <h2>Judella Store</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/frontend/index.html">Home</a></li>
+                <li><a href="/frontend/pages/product.html">Shop</a></li>
+                <li><a href="/frontend/pages/cart.html">Cart</a></li>
+                <li><a href="/frontend/pages/account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h1 style="text-align:center;">Checkout</h1>
+        
+        <div class="checkout-layout">
+            <div class="checkout-form">
+                <section>
+                    <h2>Shipping Address</h2>
+                    <fieldset>
+                        <label>Full Name</label>
+                        <input type="text" required placeholder="Enter your name">
+                        
+                        <label>Country</label>
+                        <input type="text" required placeholder="Country">
+
+                        <label>Province</label>
+                        <input type="text" required placeholder="Province">
+
+                         <label>Municipality</label>
+                        <input type="text" required placeholder="Municipality">
+
+                          <label>Street Address </label>
+                        <input type="text" required placeholder="Street Address">
+                        
+                        <label>Zip Code</label>
+                        <input type="text" required placeholder="Enter zip code">
+                    </fieldset>
+                </section>
+
+                <section>
+                    <h2>Payment Method</h2>
+                    <form>
+                        <label><input type="radio" name="payment" checked> Credit Card</label>
+                        <input type="text" placeholder="Card Number">
+                        <input type="text" placeholder="MM/YY">
+                        <input type="password" placeholder="CVV">
+
+                        <label><input type="radio" name="payment"> PayPal</label>
+                        <input type="email" placeholder="PayPal Email">
+                    </form>
+                </section>
+            </div>
+
+            <aside class="order-summary">
+                <h2>Order Summary</h2>
+                <hr>
+                <p>Elegant Summer Dress: <span>₱599.00</span></p>
+                <p>Running Shoes: <span>₱1,299.00</span></p>
+                <hr>
+                <h3>Total: ₱1,898.00</h3>
+                <button class="btn" style="width: 100%; margin-top: 20px;">Place Order</button>
+            </aside>
+        </div>
+    </div>
+
+    <script src="/frontend/js/index.js"></script>
+</body>
+</html>

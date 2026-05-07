@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judella Store - Home</title>
+
+    <link rel="stylesheet" href="/frontend/css/index.css">
+</head>
+<body>
+
+    <!-- SIDENAV -->
+    <div class="sidenav">
+
+        <div class="logo">
+            <img src="/frontend/assets/images/logo/logo.png" alt="Judella Store Logo">
+            <h2>Judella Store</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="/frontend/pages/product.html">Shop</a></li>
+                <li><a href="/frontend/pages/cart.html">Cart</a></li>
+                <li><a href="/frontend/pages/account.html">My Account</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>Welcome to Judella Store</h1>
+
+            <p>
+                Discover the best collection of dresses,
+                shoes, toys and more at unbeatable prices.
+            </p>
+
+            <a href="/frontend/pages/product.html" class="btn">
+                Shop Now
+            </a>
+
+        </section>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="product-section">
+
+            <h2>Featured Products</h2>
+
+            <!-- DYNAMIC PRODUCT GRID -->
+            <div class="grid" id="productGrid">
+
+                <!-- Products from API will load here -->
+
+            </div>
+
+        </section>
+
+        <!-- DISCOUNTED PRODUCTS -->
+        <section class="product-section">
+
+            <h2>Discounted Products</h2>
+
+            <div class="grid">
+
+                <div class="product-card">
+
+                    <img src="/frontend/assets/images/logo/jeans.jpg" alt="Product">
+
+                    <h3>Denim Jeans</h3>
+
+                    <p class="price">
+                        ₱499.00 <del>₱700.00</del>
+                    </p>
+
+                    <a href="/frontend/pages/detail.html" class="btn">
+                        View Details
+                    </a>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img src="/frontend/assets/images/logo/actiont.jpg" alt="Product">
+
+                    <h3>Action Figure</h3>
+
+                    <p class="price">
+                        ₱250.00 <del>₱400.00</del>
+                    </p>
+
+                    <a href="/frontend/pages/detail.html" class="btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/frontend/js/index.js"></script>
+
+</body>
+</html>
